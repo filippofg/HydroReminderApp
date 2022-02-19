@@ -8,6 +8,11 @@ export interface notificationSettings {
   autoCancel: boolean;
 }
 
+export interface scheduleSettings {
+  allowWhileIdle: boolean;
+  every:          string;
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -21,6 +26,11 @@ export class HomePage {
     id : 0,
     schedule : '',
     autoCancel : false
+  };
+
+  schedule: scheduleSettings = {
+    allowWhileIdle: false,
+    every: ''  
   };
 
   // intervallo di refresh
@@ -40,7 +50,12 @@ export class HomePage {
       schedule : '',
       autoCancel : false
     }
+    this.schedule = {
+      allowWhileIdle : false,
+      every : ''
+    }
     console.log(this.settings);
+    console.log(this.schedule);
   }
 
 }

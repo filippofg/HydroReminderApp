@@ -7,18 +7,14 @@
   </ion-toolbar>
 </ion-header>
 
-<!-- 
-  Card LocalNotificationSchema
-  Card Schedule
--->
-
 <ion-content>
+  <!-- notification settings -->
   <ion-card>
     <ion-card-header>
       <ion-card-title>LocalNotificationSchema</ion-card-title>
     </ion-card-header>
     
-    <ion-card-content >
+    <ion-card-content>
       <ion-item>
         <ion-label position="floating">
           title
@@ -47,27 +43,38 @@
         <ion-label>
           autoCancel
         </ion-label>
-        <ion-checkbox slot="start" [(ngModel)]="settings.autoCancel"></ion-checkbox>
+        <!-- <ion-checkbox slot="start" [(ngModel)]="settings.autoCancel"></ion-checkbox> -->
+        <ion-toggle slot="end" color="primary" [(ngModel)]="settings.autoCancel"></ion-toggle>
       </ion-item>
-      <ion-row>
-        <ion-col size="6">
-          <ion-button color="success" shape="round" expand="block" (click)="printValue()">
-            <ion-icon name="checkmark-circle-outline"></ion-icon>
-          </ion-button>
-        </ion-col>
-        <ion-col size="6">
-          <ion-button color="danger" shape="round" expand="block" (click)="resetValue()">
-            <ion-icon name="trash-outline"></ion-icon>
-          </ion-button>
-        </ion-col>
-      </ion-row>
+      
     </ion-card-content>
-    <!-- <ion-card-content>
-      <ion-item>
-        <ion-label>Intervallo:</ion-label>
-        <ion-input type="number" [(ngModel)]="inputRefresh"></ion-input>
-      </ion-item>
-      <ion-button expand="block" shape="round" color="success" (click)="printValue()">Dummy</ion-button>
-    </ion-card-content> -->
   </ion-card>
+  <!-- schedule settings -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Schedule</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>allowWhileIdle</ion-label>
+        <ion-toggle slot="end" color="primary" [(ngModel)]="schedule.allowWhileIdle"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">every</ion-label>
+        <ion-input type="text" placeholder="every" [(ngModel)]="schedule.every"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-row>
+    <ion-col size="6">
+      <ion-button color="success" shape="round" expand="block" (click)="printValue()">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button color="danger" shape="round" expand="block" (click)="resetValue()">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
 </ion-content>
