@@ -7,16 +7,17 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content>
   <!-- notification settings -->
   <!-- <ion-list-header>LocalNotificationSchema</ion-list-header> -->
-  <!-- <ion-card>
-    <ion-card-content class="ion-padding"> -->
-      <ion-item lines="none">
+  <ion-card>
+    <ion-card-header color="success">LocalNotificationSchema</ion-card-header>
+    <ion-card-content class="ion-padding">
+      <!-- <ion-item lines="none">
         <ion-label color="primary">
-          <b>LocalNotificationSchema</b>
+          LocalNotificationSchema
         </ion-label>
-      </ion-item>
+      </ion-item> -->
       <ion-item>
         <ion-label position="stacked">
           title
@@ -48,10 +49,15 @@
         <!-- <ion-checkbox slot="start" [(ngModel)]="settings.autoCancel"></ion-checkbox> -->
         <ion-toggle slot="end" color="primary" [(ngModel)]="settings.autoCancel"></ion-toggle>
       </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header color="success">Schedule</ion-card-header>
+    <ion-card-content>
       <!-- <ion-list-header color="primary">Schedule</ion-list-header> -->
-      <ion-item lines="none">
-        <ion-label color="primary"><b>Schedule</b></ion-label>
-      </ion-item>
+      <!-- <ion-item lines="none">
+        <ion-label color="primary">Schedule</ion-label>
+      </ion-item> -->
       <ion-item>
         <ion-label position="stacked">every</ion-label>
         <ion-input type="text" placeholder="every" [(ngModel)]="schedule.every"></ion-input>
@@ -60,18 +66,18 @@
         <ion-label>allowWhileIdle</ion-label>
         <ion-toggle slot="end" color="primary" [(ngModel)]="schedule.allowWhileIdle"></ion-toggle>
       </ion-item>
-      <ion-row>
-        <ion-col size="6">
-          <ion-button color="success" shape="round" expand="block" (click)="printValue()">
-            <ion-icon name="checkmark-circle-outline"></ion-icon>
-          </ion-button>
-        </ion-col>
-        <ion-col size="6">
-          <ion-button color="danger" shape="round" expand="block" (click)="resetValue()">
-            <ion-icon name="trash-outline"></ion-icon>
-          </ion-button>
-        </ion-col>
-      </ion-row>
-    <!-- </ion-card-content>
-  </ion-card> -->
+    </ion-card-content>
+  </ion-card>
+  <ion-row>
+    <ion-col size="6">
+      <ion-button color="success" shape="round" expand="block" (click)="printValue()">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button color="danger" shape="round" expand="block" (click)="resetValue()">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
 </ion-content>
