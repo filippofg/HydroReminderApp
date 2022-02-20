@@ -10,13 +10,32 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>
+      <ion-card-subtitle>
         Hello there!
-      </ion-card-title>
+      </ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      Take a sip, just in case
+      <p>Next reminder in ...</p>
+      <p>Take a sip, just in case</p>
       <ion-icon name="sparkles-outline"></ion-icon>
     </ion-card-content>
   </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+        Did you know?
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      100% of all successful people drink water.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button class="settings-btn" size="full" color="primary">Settings</ion-button>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="settings-sharp"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
